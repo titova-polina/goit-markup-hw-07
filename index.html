@@ -6,6 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./css/normalize.css" />
 		<link rel="stylesheet" href="./css/styles.css" />
+		<link rel="stylesheet" href="./css/mobile.css" />
+		<link rel="stylesheet" href="./css/tablet.css" />
+		<link rel="stylesheet" href="./css/desktop.css" />
 		<title>WebStudio</title
 		><link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +19,7 @@
 	</head>
 	<body>
 		<header class="header">
-			<div class="header-container container">
+			<div class="header-container">
 				<nav class="header__content">
 					<a class="header__logo" href="/index.html"> <span class="header__logo--blue">Web</span>Stydio </a>
 					<ul class="header-list">
@@ -30,6 +33,11 @@
 							<a href="/" class="header-link">Contacts</a>
 						</li>
 					</ul>
+					<button class="mobile-btn js-open-menu">
+						<span class="burger__line"></span>
+						<span class="burger__line"></span>
+						<span class="burger__line"></span>
+					</button>
 				</nav>
 				<address class="address">
 					<ul class="address-list">
@@ -42,6 +50,68 @@
 					</ul>
 				</address>
 			</div>
+			<div class="mobile-modal js-menu-container">
+				<div class="mobile-wraper">
+					<button class="mobile-close-btn js-close-menu">
+						<svg class="mobile-icon" width="8" height="8">
+							<use xlink:href="./images/icons.svg#close"></use>
+						</svg>
+					</button>
+					<nav>
+						<ul class="mobile-list">
+							<li class="mobile-item list">
+								<a href="/" class="mobile-link">Studio</a>
+							</li>
+							<li class="mobile-item list">
+								<a href="./portfolio.html" class="mobile-link">Portfolio</a>
+							</li>
+							<li class="mobile-item list">
+								<a href="/" class="mobile-link">Contacts</a>
+							</li>
+						</ul>
+					</nav>
+					<address class="mobile-address">
+						<ul class="mobile-address-list">
+							<li class="mobile-address-item list">
+								<a href="tel:+110001111111" class="mobile-address-link">+11 (000) 111-11-11</a>
+							</li>
+							<li class="mobile-address-item list">
+								<a href="mailto:info@devstudio.com" class="mobile-address-link">info@devstudio.com</a>
+							</li>
+						</ul>
+					</address>
+					<ul class="mobile-list-social">
+						<li class="mobile-list-item">
+							<a href="https://www.instagram.com" class="mobile-link-social" target="_blank">
+								<svg class="mobile-icon-link">
+									<use xlink:href="./images/icons.svg#instagram"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="mobile-list-item">
+							<a href="https://www.twitter.com" class="mobile-link-social" target="_blank">
+								<svg class="mobile-icon-link">
+									<use xlink:href="./images/icons.svg#twitter"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="mobile-list-item">
+							<a href="https://www.facebook.com" class="mobile-link-social" target="_blank">
+								<svg class="mobile-icon-link">
+									<use xlink:href="./images/icons.svg#facebook"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="mobile-list-item">
+							<a href="https://www.linkedin.com" class="mobile-link-social" target="_blank">
+								<svg class="mobile-icon-link">
+									<use xlink:href="./images/icons.svg#linkedin"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</header>
 		<main>
 			<section class="hero">
@@ -49,7 +119,7 @@
 				<button type="button" class="hero-btn" data-modal-open>Order Service</button>
 			</section>
 			<section class="main section">
-				<div class="container">
+				<div class="container-main">
 					<h2 hidden>features</h2>
 					<ul class="main-list">
 						<li class="main-item list">
@@ -126,7 +196,11 @@
 					<h2 class="team-title">Our Team</h2>
 					<ul class="team-list">
 						<li class="team-item list">
-							<img src="./images/team1.jpg" alt="Mark Guerrero" width="264" height="260" />
+							<picture>
+								<source srcset="./images/team1.jpg 1x" media="(min-width: 768px)" />
+								<source srcset="./images/team1.2x.jpg 2x" media="(max-width: 767px)" />
+								<img src="./images/team1.jpg" alt="Mark Guerrero" width="264" height="260" />
+							</picture>
 							<div class="team-item-description">
 								<h3 class="team-item-subtitle">Mark Guerrero</h3>
 								<p class="team-item-text">Product Designer</p>
@@ -163,7 +237,11 @@
 							</div>
 						</li>
 						<li class="team-item list">
-							<img src="./images/team2.jpg" alt="Tom Ford" width="264" height="260" />
+							<picture>
+								<source srcset="./images/team2.jpg 1x" media="(min-width: 768px)" />
+								<source srcset="./images/team2.2x.jpg 2x" media="(max-width: 767px)" />
+								<img src="./images/team2.jpg" alt="Tom Ford" width="264" height="260" />
+							</picture>
 							<div class="team-item-description">
 								<h3 class="team-item-subtitle">Tom Ford</h3>
 								<p class="team-item-text">Frontend Developer</p>
@@ -200,7 +278,11 @@
 							</div>
 						</li>
 						<li class="team-item list">
-							<img src="./images/team3.jpg" alt="Camila Garcia" width="264" height="260" />
+							<picture>
+								<source srcset="./images/team3.jpg 1x" media="(min-width: 768px)" />
+								<source srcset="./images/team3.2x.jpg 2x" media="(max-width: 767px)" />
+								<img src="./images/team3.jpg" alt="Camila Garcia" width="264" height="260" />
+							</picture>
 							<div class="team-item-description">
 								<h3 class="team-item-subtitle">Camila Garcia</h3>
 								<p class="team-item-text">Marketing</p>
@@ -237,7 +319,11 @@
 							</div>
 						</li>
 						<li class="team-item list">
-							<img src="./images/team4.jpg" alt="Daniel Wilson" width="264" height="260" />
+							<picture>
+								<source srcset="./images/team4.jpg 1x" media="(min-width: 768px)" />
+								<source srcset="./images/team4.2x.jpg 2x" media="(max-width: 767px)" />
+								<img src="./images/team4.jpg" alt="Daniel Wilson" width="264" height="260" />
+							</picture>
 							<div class="team-item-description">
 								<h3 class="team-item-subtitle">Daniel Wilson</h3>
 								<p class="team-item-text">UI Designer</p>
@@ -276,7 +362,7 @@
 					</ul>
 				</div>
 			</section>
-			<section class="customers section">
+			<section class="customers section container">
 				<h2 class="customers-title">Customers</h2>
 				<ul class="customers-list">
 					<li class="customers-list-item">
@@ -314,57 +400,63 @@
 		</main>
 		<footer class="footer">
 			<div class="container footer-content">
-				<div>
-					<a class="footer__logo" href="/index.html"> <span class="footer__logo--blue">Web</span>Stydio </a>
-					<p class="footer-text">
-						Increase the flow of customers and sales for your business with digital marketing & growth solutions.
-					</p>
-				</div>
-				<div class="footer-discription">
-					<h2 class="footer-title">Social media</h2>
-					<ul class="footer-list">
-						<li class="footer-list-item">
-							<a href="https://www.instagram.com" class="footer-link" target="_blank">
-								<svg class="footer-icon">
-									<use xlink:href="./images/icons.svg#instagram"></use>
-								</svg>
-							</a>
-						</li>
-						<li class="footer-list-item">
-							<a href="https://www.twitter.com" class="footer-link" target="_blank">
-								<svg class="footer-icon">
-									<use xlink:href="./images/icons.svg#twitter"></use>
-								</svg>
-							</a>
-						</li>
-						<li class="footer-list-item">
-							<a href="https://www.facebook.com" class="footer-link" target="_blank">
-								<svg class="footer-icon">
-									<use xlink:href="./images/icons.svg#facebook"></use>
-								</svg>
-							</a>
-						</li>
-						<li class="footer-list-item">
-							<a href="https://www.linkedin.com" class="footer-link" target="_blank">
-								<svg class="footer-icon">
-									<use xlink:href="./images/icons.svg#linkedin"></use>
-								</svg>
-							</a>
-						</li>
-					</ul>
-				</div>
-				<form class="footer-form">
-					<label class="footer-lable" for="id_subscribe">Subscribe</label>
-					<div class="footer-group">
-						<input class="footer-input" type="email" name="subscribe" placeholder="E-mail" id="id_subscribe" />
-						<button class="footer-btn" type="submit">
-							<span class="footer-btn-text">Subscribe</span>
-							<svg class="footer-icon-btn">
-								<use xlink:href="./images/icons.svg#frame"></use>
-							</svg>
-						</button>
+				<div class="footer-content-group">
+					<div>
+						<a class="footer__logo" href="/index.html"> <span class="footer__logo--blue">Web</span>Stydio </a>
+						<p class="footer-text">
+							Increase the flow of customers and sales for your business with digital marketing & growth solutions.
+						</p>
 					</div>
-				</form>
+				</div>
+				<div class="footer-content-group">
+					<div class="footer-discription">
+						<h2 class="footer-title">Social media</h2>
+						<ul class="footer-list">
+							<li class="footer-list-item">
+								<a href="https://www.instagram.com" class="footer-link" target="_blank">
+									<svg class="footer-icon">
+										<use xlink:href="./images/icons.svg#instagram"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="footer-list-item">
+								<a href="https://www.twitter.com" class="footer-link" target="_blank">
+									<svg class="footer-icon">
+										<use xlink:href="./images/icons.svg#twitter"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="footer-list-item">
+								<a href="https://www.facebook.com" class="footer-link" target="_blank">
+									<svg class="footer-icon">
+										<use xlink:href="./images/icons.svg#facebook"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="footer-list-item">
+								<a href="https://www.linkedin.com" class="footer-link" target="_blank">
+									<svg class="footer-icon">
+										<use xlink:href="./images/icons.svg#linkedin"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer-content-group">
+					<form class="footer-form">
+						<label class="footer-lable" for="id_subscribe">Subscribe</label>
+						<div class="footer-group">
+							<input class="footer-input" type="email" name="subscribe" placeholder="E-mail" id="id_subscribe" />
+							<button class="footer-btn" type="submit">
+								<span class="footer-btn-text">Subscribe</span>
+								<svg class="footer-icon-btn">
+									<use xlink:href="./images/icons.svg#frame"></use>
+								</svg>
+							</button>
+						</div>
+					</form>
+				</div>
 			</div>
 		</footer>
 		<div class="backdrop is-hidden" data-modal>
@@ -427,14 +519,16 @@
 					</ul>
 					<label class="form-checkbox">
 						<input type="checkbox" class="checkbox visually-hidden" name="confirm" required />
-						<div class="custom-checkbox">
+						<span class="custom-checkbox">
 							<svg class="check-icon">
 								<use xlink:href="./images/icons.svg#check"></use>
 							</svg>
-						</div>
-						<span class="checkbox-text">I accept the terms and conditions of the </span>
-						<a href="" target="_blank" class="checkbox-link">Privacy Policy</a></label
-					>
+						</span>
+						<span>
+							<span class="checkbox-text">I accept the terms and conditions of the </span>
+							<a href="" target="_blank" class="checkbox-link">Privacy Policy</a>
+						</span>
+					</label>
 					<div class="form-btn-wrapper">
 						<button class="form-btn" type="submit">Send</button>
 					</div>
@@ -442,5 +536,6 @@
 			</div>
 		</div>
 		<script src="./modal.js"></script>
+		<script src="./mobile.menu.js"></script>
 	</body>
 </html>
