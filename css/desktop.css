@@ -55,6 +55,10 @@
 		transition: color var(--transition-duration) var(--transition-delay);
 	}
 
+	.hero {
+		padding: 188px 0;
+	}
+
 	.container-main {
 		max-width: 1158px;
 		margin: 0 auto;
@@ -64,6 +68,10 @@
 		display: flex;
 		flex-wrap: nowrap;
 		gap: 24px;
+	}
+
+	.main-item {
+		margin-bottom: 0;
 	}
 
 	.main-discription {
@@ -91,6 +99,10 @@
 		letter-spacing: 0.02em;
 		color: var(--color-background);
 		margin-bottom: 8px;
+	}
+
+	.main-item-text {
+		font-weight: 400;
 	}
 
 	.about {
@@ -124,6 +136,7 @@
 
 	.team-item {
 		width: calc((100% - 3 * 24px) / 4);
+		margin-bottom: 0;
 	}
 
 	.customers-list {
