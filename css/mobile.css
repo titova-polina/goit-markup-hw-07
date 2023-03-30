@@ -40,8 +40,10 @@ body {
 
 .container {
 	max-width: 428px;
-	padding: 0 16px;
-	margin: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .list {
@@ -490,7 +492,8 @@ img {
 
 .footer-content {
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
 }
 
 .footer__logo {
@@ -571,8 +574,8 @@ img {
 }
 
 .footer-form {
+	width: 100%;
 	margin-top: 72px;
-	align-self: stretch;
 }
 
 .footer-lable {
@@ -614,6 +617,7 @@ img {
 
 .footer-btn {
 	display: flex;
+	max-width: 165px;
 	background-color: var(--color-logo);
 	border: none;
 	cursor: pointer;
